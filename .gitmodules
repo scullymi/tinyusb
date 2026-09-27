@@ -1,0 +1,3 @@
+[submodule "hw/mcu/raspberry_pi/Pico-PIO-USB"]
+	path = hw/mcu/raspberry_pi/Pico-PIO-USB
+	url = https://github.com/sekigon-gonnoc/Pico-PIO-USB.git

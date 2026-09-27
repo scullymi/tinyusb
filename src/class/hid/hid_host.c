@@ -458,7 +458,7 @@ bool hidh_xfer_cb(uint8_t daddr, uint8_t ep_addr, xfer_result_t result, uint32_t
   if (dir == TUSB_DIR_IN) {
     TU_LOG_DRV("  [idx=%u] Get Report callback\r\n", idx);
     TU_LOG3_MEM(epbuf->epin, xferred_bytes, 2);
-    tuh_hid_report_received_cb(daddr, idx, epbuf->epin, (uint16_t) xferred_bytes);
+    tuh_hid_report_received_cb(daddr, idx, (XFER_RESULT_SUCCESS == result)?epbuf->epin:NULL, (uint16_t) xferred_bytes);
   } else {
     tuh_hid_report_sent_cb(daddr, idx, epbuf->epout, (uint16_t) xferred_bytes);
   }
